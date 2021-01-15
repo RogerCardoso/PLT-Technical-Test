@@ -1,0 +1,24 @@
+.product {
+    .product-img {
+        max-height: 200px;
+    }
+
+    .qty-button {
+        font-size: 20px;
+        font-weight: bolder;
+        cursor: pointer;
+
+        &:hover {
+            color: gray;
+        }
+    }
+
+    .remove-button {
+        position: relative;
+        cursor: pointer;
+        
+        &:hover {
+            color: gray;
+        }
+    }
+}
