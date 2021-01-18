@@ -89,6 +89,9 @@ class Basket extends Component {
         
         return(
             <div className="container">
+                <div className="top-header text-center p-3">
+                    <h1>PRETTYLITTLETHING</h1>
+                </div>
                 <ColourFilter 
                     colours={this.getColours()} 
                     filter={(colour) => { this.setState({ filter: colour })}}
@@ -114,7 +117,7 @@ class Basket extends Component {
                             return (
                                 <div className="d-flex product my-3" key={index}>
                                     <div className="col-3 text-center">
-                                        <img className="product-img" src={product.img} alt={product.name}/>
+                                        <img className="product-img p-2" src={product.img} alt={product.name}/>
                                     </div>
                                     <div className="col-6 col-md-4 my-auto">
                                         <h5>{product.name}</h5>
@@ -150,7 +153,7 @@ class Basket extends Component {
                     )}
                 </div>
                 {/* not clear if I should filter total together with the colour filter?*/}
-                <div className="row text-center total py-3 my-5">
+                <div className="d-flex text-center total py-3 my-5">
                     <div className="col-3">
                         <h2>TOTAL</h2>
                     </div>

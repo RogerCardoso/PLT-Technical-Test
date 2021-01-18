@@ -1,3 +1,6 @@
+.top-header {
+    background-color: #FDBEDB;
+}
 .products {  
 
     border: 1px solid gray;
@@ -8,7 +11,7 @@
         }
 
         &:nth-child(odd) {
-            background-color: #f2f2f2;
+            background-color: #fee3e5;
         }
 
         .product-img {
@@ -47,5 +50,5 @@
 }
 
 .total {
-    background-color: #a2a2a2;
+    background-color: #f7f6f6;
 }
