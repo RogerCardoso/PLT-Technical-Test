@@ -17,7 +17,7 @@ class ColourFilter extends Component {
     render() {
         const { selectedValue } = this.state;
         return(
-            <div className="row my-5">
+            <div className="my-5">
                 <div className="col-12">
                     <p className="pl-3 d-inline">Colour filter: </p>
                     <select

@@ -93,53 +93,64 @@ class Basket extends Component {
                     colours={this.getColours()} 
                     filter={(colour) => { this.setState({ filter: colour })}}
                 />
-                {products.length < 1 && (
-                    <h4>You have no products in your cart.</h4>
-                )
-                }
-                {products.length > 0 &&
-                    products.map((product, index) => {
-                        if(filter !== '' && product.colour !== filter) return '';
-                        return (
-                            <div className="d-flex product my-3" key={index}>
-                                <div className="col-3 text-center">
-                                    <img className="product-img" src={product.img} alt={product.name}/>
-                                </div>
-                                <div className="col-6 col-md-4 my-auto">
-                                    <h5>{product.name}</h5>
-                                    <p className="text-right">£{parseInt(product.price).toFixed(2)}</p>
-                                </div>
-                                <div className="col-3 ml-auto text-center my-auto">
-                                    <p className="mb-0">
-                                        {product.qty && 
-                                            <span 
-                                                className="qty-button mr-3"
-                                                onClick={(e) => this.handleItem(index, 'red')}
-                                            >
-                                                -
+                <div className="products">
+                    <div className="d-flex product mb-3">
+                        <div className="col-3 text-center">
+                            Product
+                        </div>
+                        <div className="col-6 col-md-4 my-auto">
+                            Description
+                        </div>
+                        <div className="col-3 ml-auto text-center my-auto">
+                            Quantity
+                        </div>
+                    </div>
+                    {products.length < 1 && (
+                        <h4>You have no products in your cart.</h4>
+                    )}
+                    {products.length > 0 &&
+                        products.map((product, index) => {
+                            if(filter !== '' && product.colour !== filter) return '';
+                            return (
+                                <div className="d-flex product my-3" key={index}>
+                                    <div className="col-3 text-center">
+                                        <img className="product-img" src={product.img} alt={product.name}/>
+                                    </div>
+                                    <div className="col-6 col-md-4 my-auto">
+                                        <h5>{product.name}</h5>
+                                        <p className="text-right">£{parseInt(product.price).toFixed(2)}</p>
+                                    </div>
+                                    <div className="col-3 ml-auto text-center my-auto">
+                                        <p className="mb-0">
+                                            {product.qty && 
+                                                <span 
+                                                    className="qty-button mr-3"
+                                                    onClick={(e) => this.handleItem(index, 'red')}
+                                                >
+                                                    -
+                                                </span>
+                                            }
+                                            {product.qty ? product.qty : 0}
+                                            <span className="qty-button ml-3"
+                                                onClick={(e) => this.handleItem(index, 'add')}>
+                                                +
                                             </span>
-                                        }
-                                        {product.qty ? product.qty : 0}
-                                        <span className="qty-button ml-3"
-                                            onClick={(e) => this.handleItem(index, 'add')}>
-                                            +
-                                        </span>
-                                    </p>
-                                    {product.qty && 
-                                        <p 
-                                            className="small remove-button d-inline"
-                                            onClick={(e) => this.handleItem(index, 'remove')}>
-                                                remove
                                         </p>
-                                    }                                   
+                                        {product.qty && 
+                                            <p 
+                                                className="small remove-button d-inline"
+                                                onClick={(e) => this.handleItem(index, 'remove')}>
+                                                    remove
+                                            </p>
+                                        }                                   
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    }
-                )}
-                
+                            )
+                        }
+                    )}
+                </div>
                 {/* not clear if I should filter total together with the colour filter?*/}
-                <div className="row text-center my-5">
+                <div className="row text-center total py-3 my-5">
                     <div className="col-3">
                         <h2>TOTAL</h2>
                     </div>
