@@ -1,11 +1,23 @@
 .top-header {
     background-color: #FDBEDB;
+
+    h1 {
+        @media(max-width: 575px) {
+            font-size: 1.8rem;
+        }
+    }
 }
 .products {  
 
     border: 1px solid gray;
 
     .product {
+        &:first-child {
+            @media(max-width: 575px) {
+                font-size: 10px;
+            }
+        }
+
         &:last-child {
             margin-bottom: 0 !important;
         }
